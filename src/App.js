@@ -5,7 +5,6 @@ import {
   Routes, 
   Route,
 } from "react-router-dom";
-//import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { getAuth, onAuthStateChanged , signOut} from "firebase/auth";
 import './App.css';
 import { initializeApp} from "firebase/app";
