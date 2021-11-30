@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from "react";
-//import React, ( ) from "react";
+import {
+  Navigate,
+  BrowserRouter as Router, 
+  Routes, 
+  Route,
+} from "react-router-dom";
 import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { getAuth, onAuthStateChanged , signOut} from "firebase/auth";
 import './App.css';
@@ -69,7 +74,7 @@ function App() {
             element={loggedIn ? (
               <UserProfile userInformation={userInformation} /> 
             ) : (
-              <Navigator to ="/" />
+              <Navigate to="/" />
             )
           } 
         />
@@ -82,7 +87,7 @@ function App() {
                   setUserInformation={setUserInformation}
                 />
               ) : (
-                <Navigator to ="/" />
+                <Navigate to={`/user/${userinformation.uid}`} />
               )
             } 
           />
@@ -95,7 +100,7 @@ function App() {
                 setUserInformation={setUserInformation}
               />
               ) : (
-                 <Navigator to ="/" />
+                 <Navigate to={`/user/${userInformation.uid}`} />
               )
             } 
           />
