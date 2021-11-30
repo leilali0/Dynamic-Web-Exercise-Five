@@ -1,6 +1,7 @@
 import React from "react";
 
 function UserProfile ({ userInformation }) {
+  
   return (
     <div className="PageWrapper">
       <h2>User Profile</h2>

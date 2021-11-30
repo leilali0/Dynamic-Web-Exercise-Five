@@ -1,4 +1,5 @@
-import React, { useEffect, useState, useNavigate } from "react";
+import React, { useEffect, useState } from "react";
+//import React, ( ) from "react";
 import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { getAuth, onAuthStateChanged , signOut} from "firebase/auth";
 import './App.css';
@@ -38,8 +39,9 @@ function App() {
           setUserInformation({});
           setLoggedIn(false);
         }
-    });
-    setLoading(false);
+        // whenever state chnges setLoaing to false
+        setLoading(false);
+      });
     }
   }, [appInitialized]);
 
@@ -55,7 +57,7 @@ function App() {
       });
   }
 
-  if (loading) return null;
+  if (loading || !appInitialized) return null;
 
   return (
     <>
@@ -67,7 +69,7 @@ function App() {
             element={loggedIn ? (
               <UserProfile userInformation={userInformation} /> 
             ) : (
-              <></>
+              <Navigator to ="/" />
             )
           } 
         />
@@ -80,8 +82,7 @@ function App() {
                   setUserInformation={setUserInformation}
                 />
               ) : (
-                <></>
-                //<Navigate to={`/User/${userInformation.uid}`} />
+                <Navigator to ="/" />
               )
             } 
           />
@@ -94,7 +95,7 @@ function App() {
                 setUserInformation={setUserInformation}
               />
               ) : (
-                 <></>
+                 <Navigator to ="/" />
               )
             } 
           />
