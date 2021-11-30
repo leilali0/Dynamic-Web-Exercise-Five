@@ -27,7 +27,9 @@ function CreateUser( {setLoggedIn, setUserInformation}) {
         const errorCode = error.code;
         const errorMessage = error.message;
       });
-  }, []);
+    }, 
+    [setLoggedIn, setUserInformation]
+  );
 
   return (
     <div className="PageWrapper">
