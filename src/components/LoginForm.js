@@ -11,7 +11,7 @@ function LoginForm(loginUser) {
         <label htmlFor="password">Password</label>
         <input type="password" name="password" placeholder="Enter Password" />
    
-         <button type = "submit">Login</button>
+        <button type = "submit">Login</button>
       </form>
     </div>
   );

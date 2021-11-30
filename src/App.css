@@ -30,12 +30,17 @@
   text-decoration: underline;
 }
 
-.Header nav a:last-child{
+.Header nav a:last-child {
   margin-right: 0;
   padding-right: 0;
 }
 
-.Form Form{
+.Form Label {
+  padding-bottom: 5px;
+}
+
+.Form Form {
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   max-width: 500px;
